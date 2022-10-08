@@ -1,0 +1,40 @@
+.header-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-navbar__balance {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 32px;
+    width: 88px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    font-size: 16px;
+    border:none;
+    color: #F2F2F2;
+    padding: 0 0 0 10px;
+    cursor: pointer;
+}
+
+.header-navbar__balance:active {
+    background: rgba(0, 0, 0, 0.3);
+
+}
+.header-navbar__balance span {
+    padding: 0;
+}
+.header-navbar__balance img{
+    margin-right: 16px;
+}
+
+header-navbar__title {
+    width: 83px;
+}
+
+
+header-navbar__block {
+    width: 83px;
+}
