@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 .header-navbar {
     display: flex;
     justify-content: space-between;
@@ -38,4 +41,54 @@
 
 .banner {
     /*width: 100%;*/
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-card{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.product-card div {
+    font-family: 'SF Pro Display', -apple-system, system-ui, Helvetica Neue, Roboto, sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 80%;
+    text-align: left;
+    font-size: 14px;
+}
+
+.product-card__name{
+    margin-bottom: 2px;
+}
+.product-card__image {
+    width: 80%;
+    margin-bottom: 8px;
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 20px;
+}
+
+.product-card__price button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 16px;
+    line-height: 16px   ;
+    color: #818C99;
+}
+
+.product-card__price button img{
+    height: 9px;
+    margin-right: 8px;
 }
