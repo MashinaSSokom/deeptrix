@@ -1,6 +1,7 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 
+import {Icon24HomeOutline, Icon28TagOutline, Icon24PawOutline} from '@vkontakte/icons';
 import {
     Panel,
     PanelHeader,
@@ -11,7 +12,7 @@ import {
     Div,
     Avatar,
     HorizontalScroll,
-    HorizontalCell
+    HorizontalCell, Tabbar, TabbarItem, Badge
 } from '@vkontakte/vkui';
 import './Home.css'
 import icon_color from '../img/Icon_color.png'
@@ -76,8 +77,8 @@ const Home = ({id, go, fetchedUser}) => {
         setSection(e.target.textContent)
     }
     const handleProductCardClick = (price) => {
-        if (balance>=price){
-            setBalance(balance-price)
+        if (balance >= price) {
+            setBalance(balance - price)
         } else {
             alert('Недостаточно средств')
         }
@@ -106,6 +107,9 @@ const Home = ({id, go, fetchedUser}) => {
                     <img src={banner} alt="" style={{
                         width: "100%",
                     }}/>
+                    <span className={'banner__header'}>
+                        Встречайте Хэллоуин!
+                    </span>
                 </Div>
             </Group>
             <Group>
@@ -132,7 +136,7 @@ const Home = ({id, go, fetchedUser}) => {
                 <Div className={'products'}>
                     {goods.filter(item => item.section === section).map(item => {
                         return (
-                            <div key={item.id} className={'product-card'} style={{}}>
+                            <div key={item.id} className={'product-card'}>
                                 <img className={'product-card__image'}
                                      src={item.src}
                                      alt=""
@@ -142,7 +146,7 @@ const Home = ({id, go, fetchedUser}) => {
                                 </div>
                                 <div className={'product-card__price'}>
                                     <button onClick={() => handleProductCardClick(item.price)}>
-                                        <img src={icon_color}/>
+                                        <img src={icon_color} alt={'Стоимость'}/>
                                         {item.price}
                                     </button>
                                 </div>
@@ -151,6 +155,31 @@ const Home = ({id, go, fetchedUser}) => {
                     })}
                 </Div>
             </Group>
+
+            <Tabbar >
+                <TabbarItem
+                    // selected={indicator === "one"}
+                    onClick={go}
+                    data-to="home"
+                    // indicator={<Badge mode="prominent" />}
+                >
+                    <Icon24HomeOutline width={36} height={36}/>
+                </TabbarItem>
+                <TabbarItem
+                    // selected={indicator === "two"}
+                    onClick={go}
+                    data-to="Pet"
+                >
+                    <Icon24PawOutline width={36} height={36}/>
+                </TabbarItem>
+                <TabbarItem
+                    // selected={indicator === "three"}
+                    onClick={go}
+                    data-to="shop"
+                >
+                    <Icon28TagOutline width={36} height={36}/>
+                </TabbarItem>
+            </Tabbar>
             {/*{fetchedUser &&*/}
             {/*    <Group header={<Header mode="secondary">User Data Fetched with VK Bridge</Header>}>*/}
             {/*        <Cell*/}

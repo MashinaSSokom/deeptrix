@@ -40,7 +40,22 @@
 }
 
 .banner {
-    /*width: 100%;*/
+    position: relative;
+}
+.banner__header{
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    /*font-family: 'SF Pro Display';*/
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+
+    /* identical to box height, or 110% */
+    letter-spacing: -0.41px;
+
+    color: #FFFFFF;
 }
 
 .products{
