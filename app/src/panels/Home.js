@@ -23,8 +23,8 @@ const Home = ({id, go, fetchedUser}) => {
 
     return (
         <Panel id={id}>
-            <PanelHeader>
-                <Div className={'header-navbar'}>
+            <PanelHeader separator={false}>
+                <div className={'header-navbar'}>
                     <button mode={'secondary'}
                             className={'header-navbar__balance'}
                             onClick={handleBalanceClick}
@@ -36,7 +36,7 @@ const Home = ({id, go, fetchedUser}) => {
                         Магазин
                     </div>
                     <div className={'header-navbar__block'}></div>
-                </Div>
+                </div>
             </PanelHeader>
             {fetchedUser &&
                 <Group header={<Header mode="secondary">User Data Fetched with VK Bridge</Header>}>
