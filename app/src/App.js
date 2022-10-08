@@ -3,12 +3,12 @@ import bridge from '@vkontakte/vk-bridge';
 import { View, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, SplitLayout, SplitCol } from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
 
-import Home from './panels/Home';
+import Shop from './panels/Shop';
 import Persik from './panels/Persik';
 
 const App = () => {
 	const [scheme, setScheme] = useState('bright_light')
-	const [activePanel, setActivePanel] = useState('home');
+	const [activePanel, setActivePanel] = useState('shop');
 	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 
@@ -38,8 +38,7 @@ const App = () => {
 					<SplitLayout popout={popout}>
 						<SplitCol>
 							<View activePanel={activePanel}>
-								<Home id='home' fetchedUser={fetchedUser} go={go} />
-								<Persik id='persik' go={go} />
+								<Shop id='shop' go={go} activePanel={activePanel}/>
 							</View>
 						</SplitCol>
 					</SplitLayout>

@@ -14,11 +14,11 @@ import {
     HorizontalScroll,
     HorizontalCell, Tabbar, TabbarItem, Badge
 } from '@vkontakte/vkui';
-import './Home.css'
+import './Shop.css'
 import icon_color from '../img/Icon_color.png'
 import banner from '../img/banner.jpg'
 
-const Home = ({id, go, fetchedUser}) => {
+const Shop = ({id, go, activePanel}) => {
     let [balance, setBalance] = useState(2000)
     let [goods, setGoods] = useState([
         {id: 1, name: 'Кепка модника', src: require('../img/goods/kepka.png').default, price: 300, section: 'Одежда'},
@@ -158,22 +158,22 @@ const Home = ({id, go, fetchedUser}) => {
 
             <Tabbar >
                 <TabbarItem
-                    // selected={indicator === "one"}
-                    onClick={go}
+                    selected={activePanel === "home"}
+                    // onClick={go}
                     data-to="home"
                     // indicator={<Badge mode="prominent" />}
                 >
                     <Icon24HomeOutline width={36} height={36}/>
                 </TabbarItem>
                 <TabbarItem
-                    // selected={indicator === "two"}
-                    onClick={go}
-                    data-to="Pet"
+                    selected={activePanel === "pet"}
+                    // onClick={go}
+                    data-to="pet"
                 >
                     <Icon24PawOutline width={36} height={36}/>
                 </TabbarItem>
                 <TabbarItem
-                    // selected={indicator === "three"}
+                    selected={activePanel === "shop"}
                     onClick={go}
                     data-to="shop"
                 >
@@ -201,7 +201,7 @@ const Home = ({id, go, fetchedUser}) => {
     )
 };
 
-Home.propTypes = {
+Shop.propTypes = {
     id: PropTypes.string.isRequired,
     go: PropTypes.func.isRequired,
     fetchedUser: PropTypes.shape({
@@ -214,4 +214,4 @@ Home.propTypes = {
     }),
 };
 
-export default Home;
+export default Shop;
