@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .header-navbar__balance {
@@ -19,9 +20,14 @@
     cursor: pointer;
 }
 
+.header-navbar__title{
+    width: 90px;
+    margin-right: calc(50% - 90px);
+}
+
+
 .header-navbar__balance:active {
     background: rgba(0, 0, 0, 0.3);
-
 }
 .header-navbar__balance span {
     padding: 0;
@@ -30,11 +36,6 @@
     margin-right: 16px;
 }
 
-header-navbar__title {
-    width: 83px;
-}
-
-
-header-navbar__block {
-    width: 83px;
+.banner {
+    /*width: 100%;*/
 }

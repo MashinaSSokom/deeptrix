@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import {Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar} from '@vkontakte/vkui';
 import './Home.css'
 import icon_color from '../img/Icon_color.png'
+import banner from '../img/banner.png'
+
 const Home = ({id, go, fetchedUser}) => {
 
     let [balance, setBalance] = useState(2000)
@@ -35,18 +37,26 @@ const Home = ({id, go, fetchedUser}) => {
                     <div className={'header-navbar__title'}>
                         Магазин
                     </div>
-                    <div className={'header-navbar__block'}></div>
                 </div>
             </PanelHeader>
-            {fetchedUser &&
-                <Group header={<Header mode="secondary">User Data Fetched with VK Bridge</Header>}>
-                    <Cell
-                        before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-                        description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-                    >
-                        {`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-                    </Cell>
-                </Group>}
+            <Group className={'banner'}>
+                <Div>
+                    <img src={banner} alt="" style={{
+                        width: "100%",
+                    }}/>
+                </Div>
+            </Group>
+
+
+            {/*{fetchedUser &&*/}
+            {/*    <Group header={<Header mode="secondary">User Data Fetched with VK Bridge</Header>}>*/}
+            {/*        <Cell*/}
+            {/*            before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}*/}
+            {/*            description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}*/}
+            {/*        >*/}
+            {/*            {`${fetchedUser.first_name} ${fetchedUser.last_name}`}*/}
+            {/*        </Cell>*/}
+            {/*    </Group>}*/}
 
             {/*<Group header={<Header mode="secondary">Navigation Example</Header>}>*/}
             {/*	<Div>*/}
