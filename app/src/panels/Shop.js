@@ -123,7 +123,7 @@ const Shop = ({id, go, activePanel}) => {
         }
     }
     const handleAddOpenProductCountClick = () => {
-        if (openProduct.price * (openProductCount+1) <= balance ){
+        if (openProduct.price * (openProductCount + 1) <= balance) {
             setOpenProductCount(openProductCount + 1)
         }
     }
@@ -150,15 +150,25 @@ const Shop = ({id, go, activePanel}) => {
                                 <div className={'modal-card__counter'}>
                                     <div className={'modal-card__action'}>
                                         <Icon24MinusOutline onClick={handleMinusOpenProductCountClick}
-                                        style={{marginRight: '10px'}}
+                                                            style={{
+                                                                marginRight: '10px',
+                                                                color: '#5181b8',
+                                                            }}
+
                                         />
                                         {`${openProductCount} шт.`}
                                         <Icon24AddSquareOutline onClick={handleAddOpenProductCountClick}
-                                                                style={{marginLeft: '10px'}}
+                                                                style={{
+                                                                    marginLeft: '10px',
+                                                                    color: '#5181b8',
+                                                                }}
                                         />
                                     </div>
                                     <div className={'modal-card__action'}>
-                                        <Icon28CoinsOutline style={{marginRight: '20px'}}
+                                        <Icon28CoinsOutline style={{
+                                            marginRight: '20px',
+                                            color: '#5181b8',
+                                        }}
                                         />
                                         {`${openProductCount * openProduct.price} монет`}
                                     </div>
@@ -166,7 +176,7 @@ const Shop = ({id, go, activePanel}) => {
                                 <Button
                                     size="l"
                                     mode="primary"
-                                    onClick={() => handleProductBuyClick(openProduct.price*openProductCount)}
+                                    onClick={() => handleProductBuyClick(openProduct.price * openProductCount)}
                                 >
                                     Купить
                                 </Button>
