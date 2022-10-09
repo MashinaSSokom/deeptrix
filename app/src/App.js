@@ -4,7 +4,6 @@ import { View, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, Split
 import '@vkontakte/vkui/dist/vkui.css';
 
 import Shop from './panels/Shop';
-import Persik from './panels/Persik';
 
 const App = () => {
 	const [scheme, setScheme] = useState('bright_light')
@@ -18,13 +17,7 @@ const App = () => {
 				setScheme(data.scheme)
 			}
 		});
-
-		async function fetchData() {
-			const user = await bridge.send('VKWebAppGetUserInfo');
-			setUser(user);
-			setPopout(null);
-		}
-		fetchData();
+		setPopout(null);
 	}, []);
 
 	const go = e => {

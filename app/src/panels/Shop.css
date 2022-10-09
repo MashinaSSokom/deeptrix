@@ -1,6 +1,7 @@
-*{
+* {
     box-sizing: border-box;
 }
+
 .header-navbar {
     display: flex;
     justify-content: space-between;
@@ -17,13 +18,13 @@
     background: rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     font-size: 16px;
-    border:none;
+    border: none;
     color: #F2F2F2;
     padding: 0 0 0 10px;
     cursor: pointer;
 }
 
-.header-navbar__title{
+.header-navbar__title {
     width: 90px;
     margin-right: calc(50% - 90px);
 }
@@ -32,17 +33,20 @@
 .header-navbar__balance:active {
     background: rgba(0, 0, 0, 0.3);
 }
+
 .header-navbar__balance span {
     padding: 0;
 }
-.header-navbar__balance img{
+
+.header-navbar__balance img {
     margin-right: 16px;
 }
 
 .banner {
     position: relative;
 }
-.banner__header{
+
+.banner__header {
     position: absolute;
     top: 15%;
     left: 10%;
@@ -58,12 +62,12 @@
     color: #FFFFFF;
 }
 
-.products{
+.products {
     display: flex;
     flex-wrap: wrap;
 }
 
-.product-card{
+.product-card {
     width: 33%;
     display: flex;
     flex-direction: column;
@@ -82,28 +86,82 @@
     font-size: 14px;
 }
 
-.product-card__name{
+.product-card__name {
     margin-bottom: 2px;
 }
+
 .product-card__image {
     width: 80%;
     margin-bottom: 8px;
     padding: 5px;
-    border: 1px solid grey;
+    border: 0.5px solid rgba(0, 0, 0, 0.08);
     border-radius: 20px;
 }
 
-.product-card__price button{
+.product-card__price button {
     background: none;
     border: none;
     cursor: pointer;
     width: 40px;
     height: 16px;
-    line-height: 16px   ;
+    line-height: 16px;
     color: #818C99;
 }
 
-.product-card__price button img{
+.product-card__price button img {
     height: 9px;
     margin-right: 8px;
+}
+
+.closeModal {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 24px;
+    height: 24px;
+    background: rgba(0, 0, 0, 0.08);
+    fill-opacity: 0.12;
+    color: #818C99;
+    /*text-align: center;*/
+    font-size: 20px;
+    border: none;
+    border-radius: 100%;
+}
+
+.closeModal:after {
+    content: 'x';
+    position: absolute;
+    top: -4px;
+    right: 7px;
+
+}
+
+.modal__image {
+    width: 94px;
+    height: 94px;
+    border: 0.5px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.modal-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+
+.modal-card__action {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.modal-card__action:first-child {
+    border-right: 1px solid #BBB9B9;
+}
+
+.modal-card__counter {
+    display: flex;
+    margin-bottom: 33px;
+    margin-top: 28px;
 }
